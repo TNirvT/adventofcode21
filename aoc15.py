@@ -43,7 +43,7 @@ def read_map(inputs: list[list[int]]):
 
 def dijkstra(graph: Graph):
     end = graph.nodes[-1]
-    unvisited = set(graph.get_nodes())
+    unvisited = set(graph.get_nodes()) # changed from list, becoz slow
     path = {x: INFINITE for x in unvisited}
     path[(0, 0)] = 0
     prev_nodes = {}
@@ -125,6 +125,5 @@ if __name__ == "__main__":
 
     new_map = map_x5x5(inputs)
     nodes, init_graph = read_map(new_map)
-    # graph = Graph(nodes, init_graph)
     path = dijkstra2(init_graph)
     print(f"Part two: {path[list(init_graph.keys())[-1]]}")
