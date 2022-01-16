@@ -1,3 +1,4 @@
-*.txt
+aoc*.txt
+test.txt
 /temp
 /venv
